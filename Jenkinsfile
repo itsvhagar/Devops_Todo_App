@@ -24,7 +24,7 @@ pipeline {
         stage("Docker login and push docker image") {
             steps {
                 withBuildConfiguration {
-                    sh 'docker login --username ${repository_username} --password ${repository_password}'
+                    sh "docker login --username ${repository_username} --password ${repository_password}"
                     sh "docker push itsanhviet/mgm_devops_1:latest"
                 }
             }
