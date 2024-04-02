@@ -5,7 +5,7 @@ import groovy.transform.Field
 @Field
 String DOCKER_USER_REF = 'anhviet_docker'
 @Field
-String SSH_ID_REF = 'ssh-credentials-id'
+String SSH_ID_REF = 'ec2-18-143-167-76'
 
 pipeline {
     agent any
@@ -35,7 +35,7 @@ pipeline {
                 withBuildConfiguration {
                     sshagent(credentials: [SSH_ID_REF]) {
                         sh '''
-                            ssh -o StrictHostKeyChecking=no root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name av_mgm_devops_1 -p 4008:8000 itsanhviet/mgm_devops_1:latest"
+                            ssh -o StrictHostKeyChecking=no root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name av_mgm_devops -p 4008:8000 itsanhviet/mgm_devops_1:latest"
                         '''
                     }
                 }
