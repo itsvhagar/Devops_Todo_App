@@ -26,7 +26,7 @@ pipeline {
                 withBuildConfiguration {
                     echo repository_password
                     sh "docker login --username ${repository_username} --password ${repository_password}"
-                    sh "docker push itsanhviet/mgm_devops_1"
+                    sh "docker push itsanhviet/mgm_devops_1:latest"
                 }
             }
         }
