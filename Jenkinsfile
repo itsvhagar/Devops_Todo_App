@@ -35,7 +35,7 @@ pipeline {
                 withBuildConfiguration {
                     sshagent(credentials: [SSH_ID_REF]) {
                         sh '''
-                            ssh -o StrictHostKeyChecking=no root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name mgm_devops_1 -p 3008:8000 itsanhviet/mgm_devops_1:latest"
+                            ssh -o StrictHostKeyChecking=no root@ec2-18-143-167-76.ap-southeast-1.compute.amazonaws.com "docker run --detach --name av_mgm_devops_1 -p 3008:8000 itsanhviet/mgm_devops_1:latest"
                         '''
                     }
                 }
